@@ -1,0 +1,54 @@
+////////////////////////////////
+//
+// Color Palette
+// Adapted from IBM Design Colors:
+// https://github.com/IBM-Design/colors/blob/master/_ibm-colors.scss
+//
+////////////////////////////////
+
+$ColorPalette: (
+  'red': (
+    10: #E74C3C,
+    20: #C0392B
+  ),
+  'orange': (
+    10: #E67E22,
+    20: #D35400
+  ),
+  'yellow': (
+    10: #F1C40F,
+    20: #F39C12
+  ),
+  'green': (
+    10: #2ECC71,
+    20: #27AE60
+  ),
+  'turquoise': (
+    10: #1ABC9C,
+    20: #16A085
+  ),
+  'blue': (
+    10: #3498DB,
+    20: #2980B9
+  ),
+  'purple': (
+    10: #9B59B6,
+    20: #8E44AD
+  ),
+  'white': (
+    10: #FFFFFF,
+    20: #ECFDF1,
+    30: #BDC3C7
+  ),
+  'gray': (
+    10: #95A5A6,
+    20: #7F8C8D
+  ),
+  'black': (
+    10: #34495E,
+    20: #2C3E50,
+    30: #333333
+  )
+);
+
+$GlobalSettings: map-merge($GlobalSettings, $ColorPalette);

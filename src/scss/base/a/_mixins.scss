@@ -1,0 +1,13 @@
+@mixin base--a($color: null, $background: null) {
+
+  color: color('turquoise', 10);
+
+  &:visited {
+    color: color('turquoise', 20);
+  }
+
+  &:hover,
+  &:focus {
+    color: color('gray', 20);
+  }
+}

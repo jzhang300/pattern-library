@@ -1,0 +1,8 @@
+._container {
+  width: 100%;
+  margin: auto;
+
+  @include breakpoint(get('medium')) {
+    width: get('medium');
+  }
+}

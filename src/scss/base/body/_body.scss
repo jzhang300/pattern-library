@@ -9,4 +9,8 @@ body {
   & * + * {
     margin-top: get('rhythm') / 2;
   }
+
+  ::selection {
+    background-color: lighten(color('yellow', 10), 40%);
+  }
 }

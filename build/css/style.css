@@ -842,13 +842,12 @@ body {
     position: absolute;
     top: 0rem;
     margin-top: 0rem;
-    z-index: -1; }
+    z-index: -1;
+    height: calc(100% + 3rem); }
     .timeline--end-of-line .timeline--line {
       height: 3rem;
       top: -3rem; }
-    .timeline--posts .timeline--line {
-      height: calc(100% + 3rem); }
-  .timeline--tag-row {
+  .timeline--row {
     display: block;
     text-align: center;
     position: relative; }
@@ -906,6 +905,21 @@ body {
       .timeline--post:nth-of-type(even):after {
         border-right-color: #1ABC9C;
         left: -1rem; }
+    .timeline--post_large {
+      clear: both;
+      width: 100%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      border-bottom: 0.2rem solid white; }
+      .timeline--post_large:before {
+        left: calc(50% - 0.5rem);
+        top: calc(-0.5rem - 1.5rem); }
+      .timeline--post_large:nth-of-type(odd):after, .timeline--post_large:after {
+        border: 0.5rem solid transparent;
+        border-bottom-color: #1ABC9C;
+        top: -1rem;
+        right: initial;
+        left: calc(50% - 0.5rem); }
   .timeline--post-image {
     width: 100%;
     height: 10rem;
@@ -933,7 +947,8 @@ body {
 
 ._container {
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  padding: 0rem 1rem; }
   @media (min-width: 768px) {
     ._container {
       width: 768px; } }

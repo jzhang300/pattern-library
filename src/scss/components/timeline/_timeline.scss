@@ -12,18 +12,15 @@
     top: 0rem;
     margin-top: 0rem;
     z-index: -1;
+    height: calc(100% + 3rem);
 
     .timeline--end-of-line & {
       height: 3rem;
       top: -3rem;
     }
-
-    .timeline--posts & {
-      height: calc(100% + 3rem);
-    }
   }
 
-  &--tag-row {
+  &--row {
     display: block;
     text-align: center;
     position: relative;
@@ -106,6 +103,27 @@
       &:after {
         border-right-color: $post-color;
         left: -1rem;
+      }
+    }
+
+    &_large {
+      clear: both;
+      width: 100%;
+      margin-top: get('rhythm') * 1.5;
+      margin-bottom: get('rhythm') * 1.5;
+      border-bottom: 0.2rem solid white;
+
+      &:before {
+        left: calc(50% - #{$post-dot-width / 2});
+        top: calc(#{- $post-dot-width / 2} - 1.5rem);
+      }
+      &:nth-of-type(odd):after,
+      &:after {
+        border: $post-arrow-width solid transparent;
+        border-bottom-color: $post-color;
+        top: -1rem;
+        right: initial;
+        left: calc(50% - #{$post-arrow-width});
       }
     }
   }

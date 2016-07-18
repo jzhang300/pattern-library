@@ -1,0 +1,142 @@
+.timeline {
+
+  $timeline-color: color('turquoise', 10);
+
+  height: 10rem;
+
+  &--line {
+    width: calc(50% + 1px);
+    border-right: 2px solid $timeline-color;
+    height: 3rem;
+    position: absolute;
+    top: 0rem;
+    margin-top: 0rem;
+    z-index: -1;
+
+    .timeline--end-of-line & {
+      height: 3rem;
+      top: -3rem;
+    }
+
+    .timeline--posts & {
+      height: calc(100% + 3rem);
+    }
+  }
+
+  &--tag-row {
+    display: block;
+    text-align: center;
+    position: relative;
+  }
+  &--tag {
+    text-align: center;
+    display: inline-block;
+    background-color: $timeline-color;
+    margin-top: 0rem;
+    padding: get('rhythm') / 8 get('rhythm') / 4;
+    border-radius: 0.15em;
+    color: white;
+  }
+
+  &--posts {
+
+  }
+
+  &--post {
+    $post-margin-from-line: 3%;
+    $post-arrow-width: 0.5rem;
+    $post-dot-width: 1rem;
+    $post-dot-color: $timeline-color;
+    $post-color: $timeline-color;
+
+    &.hidden {
+      visibility: hidden;
+      opacity: hidden;
+      transform: scale(0);
+    }
+
+    width: #{50% - $post-margin-from-line};
+    text-align: left;
+    background-color: $post-color;
+    position: relative;
+    border-radius: 0.25rem;
+    padding: get('rhythm') / 2;
+    transition: 0.15s;
+
+    &:before {
+      position: absolute;
+      border: 0.2rem solid white;
+      width: $post-dot-width;
+      height: $post-dot-width;
+      border-radius: 50%;
+      background-color: $post-dot-color;
+      top: get('rhythm');
+    }
+
+    &:after {
+      position: absolute;
+      border: $post-arrow-width solid transparent;
+      top: get('rhythm');
+    }
+
+    &:nth-of-type(odd) {
+      float: left;
+      transform-origin: top right;
+      clear: both;
+
+      &:before {
+        right: calc(#{-$post-dot-width / 2 - 0.1rem} - #{$post-margin-from-line * 2});
+      }
+
+      &:after {
+        border-left-color: $post-color;
+        right: -1rem;
+      }
+    }
+
+    &:nth-of-type(even) {
+      float: right;
+      transform-origin: top left;
+      margin-top: 3rem;
+
+      &:before {
+        left: calc(#{-$post-dot-width / 2 - 0.05rem} - #{$post-margin-from-line * 2});
+      }
+
+      &:after {
+        border-right-color: $post-color;
+        left: -1rem;
+      }
+    }
+  }
+
+  &--post-image {
+    width: 100%;
+    height: 10rem;
+    display: block;
+  }
+
+  &--end-of-line {
+    margin-top: get('rhythm');
+  }
+  &--end-of-line-point {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: $timeline-color;
+    display: inline-block;
+    margin-top: 0rem;
+    position: absolute;
+    top: 0rem;
+    left: calc(50% - 0.5rem);
+  }
+  &--end-of-line-text {
+    position: absolute;
+    top: 1.5rem;
+    left: 0%;
+    right: 0%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0rem;
+  }
+}

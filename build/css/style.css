@@ -833,6 +833,104 @@ body {
   .color-tile--details {
     margin-top: 0rem; }
 
+.timeline {
+  height: 10rem; }
+  .timeline--line {
+    width: calc(50% + 1px);
+    border-right: 2px solid #1ABC9C;
+    height: 3rem;
+    position: absolute;
+    top: 0rem;
+    margin-top: 0rem;
+    z-index: -1; }
+    .timeline--end-of-line .timeline--line {
+      height: 3rem;
+      top: -3rem; }
+    .timeline--posts .timeline--line {
+      height: calc(100% + 3rem); }
+  .timeline--tag-row {
+    display: block;
+    text-align: center;
+    position: relative; }
+  .timeline--tag {
+    text-align: center;
+    display: inline-block;
+    background-color: #1ABC9C;
+    margin-top: 0rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.15em;
+    color: white; }
+  .timeline--post {
+    width: 47%;
+    text-align: left;
+    background-color: #1ABC9C;
+    position: relative;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    -webkit-transition: 0.15s;
+    transition: 0.15s; }
+    .timeline--post.hidden {
+      visibility: hidden;
+      opacity: hidden;
+      -webkit-transform: scale(0);
+              transform: scale(0); }
+    .timeline--post:before {
+      position: absolute;
+      border: 0.2rem solid white;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: #1ABC9C;
+      top: 2rem; }
+    .timeline--post:after {
+      position: absolute;
+      border: 0.5rem solid transparent;
+      top: 2rem; }
+    .timeline--post:nth-of-type(odd) {
+      float: left;
+      -webkit-transform-origin: top right;
+              transform-origin: top right;
+      clear: both; }
+      .timeline--post:nth-of-type(odd):before {
+        right: calc(-0.6rem - 6%); }
+      .timeline--post:nth-of-type(odd):after {
+        border-left-color: #1ABC9C;
+        right: -1rem; }
+    .timeline--post:nth-of-type(even) {
+      float: right;
+      -webkit-transform-origin: top left;
+              transform-origin: top left;
+      margin-top: 3rem; }
+      .timeline--post:nth-of-type(even):before {
+        left: calc(-0.55rem - 6%); }
+      .timeline--post:nth-of-type(even):after {
+        border-right-color: #1ABC9C;
+        left: -1rem; }
+  .timeline--post-image {
+    width: 100%;
+    height: 10rem;
+    display: block; }
+  .timeline--end-of-line {
+    margin-top: 2rem; }
+  .timeline--end-of-line-point {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #1ABC9C;
+    display: inline-block;
+    margin-top: 0rem;
+    position: absolute;
+    top: 0rem;
+    left: calc(50% - 0.5rem); }
+  .timeline--end-of-line-text {
+    position: absolute;
+    top: 1.5rem;
+    left: 0%;
+    right: 0%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0rem; }
+
 ._container {
   width: 100%;
   margin: auto; }
